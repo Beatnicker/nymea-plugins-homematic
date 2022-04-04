@@ -1,0 +1,274 @@
+{
+    "name": "Homematic",
+    "displayName": "Homematic",
+    "id": "f253e631-dd52-4477-897e-658e58b1c9c9",
+    "vendors": [
+        {
+            "name": "Homematic",
+            "displayName": "Homematic",
+            "id": "1f506350-64a5-435d-b6c1-8aa5c68c872b",
+            "thingClasses": [
+                {
+                    "name": "ccu",
+                    "displayName": "CCU",
+                    "id": "4d765a93-69b9-4838-ac04-0a31049d5f87",
+                    "setupMethod": "JustAdd",
+                    "createMethods": ["User"],
+                    "interfaces": ["gateway"],
+                    "paramTypes": [
+                    {
+                    "id": "2d63014c-7883-40e4-bca2-8c6c51232525",
+                    "name": "host",
+                    "displayName": "host address",
+                    "type": "QString",
+                    "inputType": "IPv4Address"
+                    },
+                    {
+                    "id": "5d8fd389-369f-45c3-9406-f76ac738655b",
+                    "name": "port",
+                    "displayName": "port",
+                    "type": "int",
+                    "defaultValue": "2001"
+                    }
+                    ],
+                    "stateTypes": [
+                    {
+                    "id": "4e3bf2bc-4fda-452f-9386-de8169d09b3d",
+                    "name": "connected",
+                    "displayName": "connected",
+                    "displayNameEvent": "connected changed",
+                    "type": "bool",
+                    "defaultValue": false
+                    },
+                    {
+                    "id": "5f05b924-cd5e-48a7-bd9c-9ceb06eb2058",
+                    "name": "serial",
+                    "displayName": "serial number",
+                    "displayNameEvent" :"serail number changed",
+                    "type": "QString",
+                    "defaultValue": ""
+
+                    },
+                    {
+                    "id": "921203c0-59e7-4346-8a09-d0740b51e4df",
+                    "name": "firmware",
+                    "displayName": "firmware version",
+                    "displayNameEvent" :"firmware version changed",
+                    "defaultValue": "",
+                    "type": "int"
+                    }
+                    ],
+                    "actionTypes": [
+
+                    ],
+                    "eventTypes": [
+
+                    ]
+                },
+                {
+                    "id": "b38a52fc-4088-421f-94a4-2385c04bdd50",
+                    "name": "wallThermostat",
+                    "displayName": "Max! Wall Thermostat",
+                    "interfaces": ["heating", "thermostat", "temperaturesensor", "battery", "wirelessconnectable"],
+                    "createMethods": ["auto"],
+                    "paramTypes": [
+                        {
+                            "id": "d8e84bae-cf96-48d1-8ed8-77723860de4f",
+                            "name": "serial",
+                            "displayName": "serial number",
+                            "type": "QString",
+                            "inputType": "TextLine"
+                        }
+                    ],
+                    "stateTypes": [
+                        {
+                            "id": "85c4963f-6d10-4680-a2af-7038d957ddc6",
+                            "name": "power",
+                            "displayName": "On/off",
+                            "displayNameEvent": "Turned on or off",
+                            "displayNameAction": "Turn on or off",
+                            "type": "bool",
+                            "defaultValue": false,
+                            "writable": true
+                        },
+                        {
+                            "id": "49628fa3-dce7-42fe-81c4-b35dfd7e75e5",
+                            "name": "targetTemperature",
+                            "displayName": "desired temperature",
+                            "displayNameEvent": "desired temperature changed",
+                            "displayNameAction": "Set desired temperature",
+                            "type": "double",
+                            "unit": "DegreeCelsius",
+                            "defaultValue": 0,
+                            "minValue": 4.5,
+                            "maxValue": 30.5,
+                            "writable": true
+                        },
+                        {
+                            "id": "68109fa1-0020-4b75-a0dc-75c25e1d2bb0",
+                            "name": "temperature",
+                            "displayName": "current temperature",
+                            "displayNameEvent": "current temperature changed",
+                            "unit": "DegreeCelsius",
+                            "type": "double",
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "a731663a-d51b-4f97-9c30-b732521d94b4",
+                            "name": "batteryCritical",
+                            "displayName": "battery low",
+                            "displayNameEvent": "battery low changed",
+                            "type": "bool",
+                            "defaultValue": false
+                        },
+                        {
+                            "id": "d9c02012-ebac-45e2-ba86-8fb42b44aa44",
+                            "name": "connected",
+                            "displayName": "link status ok",
+                            "displayNameEvent": "link status changed",
+                            "type": "bool",
+                            "defaultValue": false
+                        }
+                    ],
+                    "actionTypes": [
+
+                    ],
+                    "eventTypes": [
+
+                    ]
+                },
+                {
+                    "id": "9057981a-71e5-4ed5-9fab-d47522f0a5fb",
+                    "name": "radiatorThermostat",
+                    "displayName": "HM Radiator Thermostat",
+                    "interfaces": ["heating", "thermostat", "battery", "wirelessconnectable"],
+                    "createMethods": ["auto"],
+                    "paramTypes": [
+                        {
+                            "id": "ba1551f2-8489-457a-b8f8-056736f461f3",
+                            "name": "adress",
+                            "displayName": "adress",
+                            "type": "QString",
+                            "inputType": "TextLine"
+                        },
+                        {
+                            "id": "87856073-2364-4513-a07f-cefe9fbadac5",
+                            "name": "name",
+                            "displayName": "name",
+                            "type": "QString",
+                            "inputType": "TextLine"
+                        }
+                    ],
+                    "actionTypes": [
+                        {
+                            "id": "19da33e9-b6b8-4d81-bc4c-61313523c949",
+                            "name": "setAutoMode",
+                            "displayName": "set auto mode"
+                        },
+                        {
+                            "id": "dc2d4221-ebb5-41c1-9be2-2f3659d0d8f9",
+                            "name": "setManualMode",
+                            "displayName": "set manual mode"
+                        }
+                    ],
+                    "stateTypes": [
+                        {
+                            "id": "80cfb193-54e0-43a8-84e1-35c716705281",
+                            "name": "temperature",
+                            "displayName": "temperature",
+                            "displayNameEvent": "emperature changed",
+                            "unit": "DegreeCelsius",
+                            "type": "double",
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "cbc3c754-c2bd-4431-94de-9aef33a87237",
+                            "name": "errorOccurred",
+                            "displayName": "error occured",
+                            "displayNameEvent": "error occured changed",
+                            "type": "bool",
+                            "defaultValue": false
+                        },
+                        {
+                            "id": "5d04df9a-5388-4830-9291-93c5c4c2f0c2",
+                            "name": "batteryCritical",
+                            "displayName": "battery low",
+                            "displayNameEvent": "battery low changed",
+                            "type": "bool",
+                            "defaultValue": false
+                        },
+                        {
+                            "id": "5b147cae-9878-4a44-8fcf-3cf646f9f97d",
+                            "name": "connected",
+                            "displayName": "link status ok",
+                            "displayNameEvent": "link status changed",
+                            "type": "bool",
+                            "defaultValue": false
+                        },
+
+                        {
+                            "id": "1b4bfa8b-c410-42b6-99bc-97f2ef5114f4",
+                            "name": "targetTemperature",
+                            "displayName": "desired temperature",
+                            "displayNameEvent": "desired temperature changed",
+                            "displayNameAction": "Set desired temperature",
+                            "unit": "DegreeCelsius",
+                            "type": "double",
+                            "defaultValue": 0,
+                            "minValue": 4.5,
+                            "maxValue": 30.5,
+                            "writable": true
+                        },
+                        {
+                            "id": "de24e8ee-c69a-4aae-a61d-29f8399865ab",
+                            "name": "power",
+                            "displayName": "On/off",
+                            "displayNameEvent": "Turned on or off",
+                            "displayNameAction": "Turn on or off",
+                            "type": "bool",
+                            "defaultValue": false,
+                            "writable": true
+                        },
+                        {
+                            "id": "105bd2f8-4cc0-4bde-8e2d-8dbd3d2ce559",
+                            "name": "offsetTemp",
+                            "displayName": "offset temperature",
+                            "displayNameEvent": "offset temperature changed",
+                            "unit": "DegreeCelsius",
+                            "type": "double",
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "8c92980b-cca9-4914-812c-f92d3c5cbb6f",
+                            "name": "boostValveValue",
+                            "displayName": "boost valve",
+                            "displayNameEvent": "boost value changed",
+                            "type": "int",
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "15e3352b-d0af-45da-b503-ce644a7ae491",
+                            "name": "discalcWeekDay",
+                            "displayName": "discalc weekday",
+                            "displayNameEvent": "discalc weekday changed",
+                            "type": "QString",
+                            "defaultValue": ""
+                        },
+                        {
+                            "id": "00c45784-0eed-4d96-b58c-a5cf629c6616",
+                            "name": "valvePosition",
+                            "displayName": "valve position",
+                            "displayNameEvent": "valve position changed",
+                            "unit": "Percentage",
+                            "type": "int",
+                            "defaultValue": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
